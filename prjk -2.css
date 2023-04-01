@@ -1,0 +1,90 @@
+*{
+
+margin: 0;
+padding: 0;
+}
+
+body{
+    background: linear-gradient(#01012e,#240019); /* هذا صف يتكلم الالوان الصفحة    */
+        height: 100vh;  /* هذا الصفحه كامله   */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;     
+    /* هذا يحدد نوع الخط  */
+}
+
+section{
+    background: url('stars1\ \(1\).png');
+    height: 100vh; /*  عشان تكون صفحه كامله النجوم  */
+    display: flex; 
+    justify-content: center; /*  عشان تكون في نصف الصفحه  */
+    align-items: center;     /*   تكون وسط الصفحه */
+}
+ul{
+    text-align: center;  /**/
+}
+ul:hover li a {
+ opacity: 0 ; /* ذا وقفت ماوس على كلمه تختفي */
+}
+ul li {
+    list-style: none ; /*   يشيل النقاط اسود اللي جب الكلام */
+     margin: 14px 0 ;
+}
+ul li a{
+    color: white;
+    text-decoration: none ;
+  font-size: 20px ;
+  font-weight: 500;
+letter-spacing: 4px ; /*   المساحة  مابين الحروف  */
+ background: darkblue ; /* خلفية الكلام  */
+padding: 6px 15px ;/*   تحديد */
+border-radius: 20px; /*  تحديد حدود الكلام  */
+display: block ; /* ذا وضعت الماوس على كلام يكبر */
+ text-transform: uppercase; /* تكون الحروف كبتل */
+width: 120px; /* مقاس الكلامه */
+transition: 0.5s; /* يكبر الكلام بسرعه   */
+position: relative; /*يظهرا الكلام */
+z-index: 10 ;
+}
+ ul li a:hover{
+    transform: scale(1.5);
+    background: darkmagenta; /* ذا حطيت ماوس على كلامه  ياغير الالون  */
+    opacity: 1; /* ذا وقفت ماوس على كلمه تختفي */
+}
+ul li::after{
+    content: attr(data-text);  /*  تكتب تحت الكلام */
+color: #fff;
+left: 50%;  /*  تكون في نصف الصفحه  */
+top : 50%;  /*  تكون في نصف الصفحه  */
+position: absolute ;
+transform: translate(-50%,-50%); /*  تكون في نصف الصفحه  */
+   font-size: 80px;
+   font-weight: 900 ;
+   text-transform: uppercase ; /* تكون الحروف كبتل */
+    opacity: 0 ;
+    letter-spacing: 50px ;/*  تبعاد مابين الحروف */
+pointer-events: none /* ذا وجة الماوس على ماتظهرا */ ;
+transition: 0.5s ;
+}
+
+ul li:hover:after{
+    opacity: 0.5 ;
+    letter-spacing: 5px
+}
+
+ul li::before{ /*صورة الشمس */
+    content: 'a';
+width: 180px;
+height: 80px;
+background: #fff;
+position: absolute;
+left: 50%;  /*  تكون في نصف الصفحه  */
+top : 50%;  /*  تكون في نصف الصفحه  */
+transform: translate(-50%,70%); /*  تكون في نصف الصفحه  */
+border-radius: 60%; /* عشان تكون دائرة*/
+box-shadow: 0 0 80px rgb(221, 108, 22) ;
+opacity: 0;
+transition: 0.5s;
+} 
+ul li :hover::before{
+    opacity: 0.5s ;
+    width: 80px;
+}
